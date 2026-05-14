@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+locale: es
+
+collections:
+  - name: settings
+    label: Configuración del Sitio
+    files:
+      - name: general
+        label: General
+        file: content/settings.json
+        fields:
+          - { label: Nombre del sitio, name: site_name, widget: string }
+          - { label: Correo de contacto, name: contact_email, widget: string }
+          - { label: Teléfono, name: phone, widget: string, required: false }
+          - { label: Instagram URL, name: instagram_url, widget: string, required: false }
+          - { label: Facebook URL, name: facebook_url, widget: string, required: false }
+
+  - name: home
+    label: Página de Inicio
+    files:
+      - name: content
+        label: Contenido
+        file: content/home.json
+        fields:
+          - { label: Título Hero, name: hero_title, widget: string }
+          - { label: Subtítulo Hero, name: hero_subtitle, widget: text }
+          - { label: Texto Quiénes Somos, name: about_text, widget: text }
+          - { label: Título Campaña, name: campaign_title, widget: string }
+          - { label: Texto Campaña, name: campaign_text, widget: text }
+
+  - name: team
+    label: Equipo
+    label_singular: Miembro del Equipo
+    folder: content/team
+    create: true
+    slug: "{{name}}"
+    fields:
+      - { label: Nombre, name: name, widget: string }
+      - { label: Rol, name: role, widget: string }
+      - { label: Foto, name: photo, widget: image, required: false }
+      - { label: Biografía, name: bio, widget: text, required: false }
+
+  - name: testimonials
+    label: Testimonios
+    label_singular: Testimonio
+    folder: content/testimonials
+    create: true
+    slug: "{{fields.name}}"
+    fields:
+      - { label: Nombre, name: name, widget: string }
+      - { label: Rol, name: role, widget: string }
+      - { label: Testimonio, name: quote, widget: text }

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-brand-text font-sans;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-terracotta text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-red transition-colors duration-200;
+  }
+  .btn-outline {
+    @apply border-2 border-brand-terracotta text-brand-terracotta font-semibold px-6 py-3 rounded-full hover:bg-brand-terracotta hover:text-white transition-colors duration-200;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif text-brand-red font-bold;
+  }
+  .section-underline {
+    @apply block w-16 h-1 bg-brand-gold mt-2 mb-6 rounded;
+  }
+}

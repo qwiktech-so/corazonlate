@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Donaciones" description="Apoya a Fundación Corazón Late con una donación y transforma vidas.">
+
+  <div class="bg-brand-red text-white py-16 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-4xl font-serif font-bold mb-3">Donaciones</h1>
+      <p class="text-white/80 text-lg">Tu apoyo hace posible que cada niño descubra su propósito.</p>
+    </div>
+  </div>
+
+  <section class="max-w-3xl mx-auto px-6 py-20 text-center">
+    <h2 class="section-title">Cada aporte cuenta</h2>
+    <span class="section-underline mx-auto"></span>
+    <p class="text-brand-text/80 leading-relaxed mt-4 mb-8 max-w-xl mx-auto">
+      Tu donación nos permite seguir sembrando fe, esperanza y amor en la vida de niños y adolescentes.
+      No servimos solos — tú lo haces posible.
+    </p>
+
+    <!-- Impact cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 text-left">
+      {[
+        { amount: '$10', impact: 'cubre materiales educativos para un niño durante un mes.' },
+        { amount: '$25', impact: 'financia una jornada recreativa completa para 5 niños.' },
+        { amount: '$50', impact: 'apoya un taller de mentoría y liderazgo juvenil.' },
+      ].map(card => (
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-brand-border">
+          <p class="text-3xl font-bold text-brand-terracotta mb-2">{card.amount}</p>
+          <p class="text-sm text-brand-text/70 leading-relaxed">{card.impact}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- PayPal Button -->
+    <div class="bg-white rounded-3xl p-10 shadow-sm inline-block">
+      <p class="text-brand-text font-semibold mb-6 text-lg">Dona de forma segura con PayPal</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_top">
+        <input type="hidden" name="hosted_button_id" value="XE3R99LUD79GU" />
+        <input
+          type="image"
+          src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+          border="0"
+          name="submit"
+          title="PayPal - The safer, easier way to pay online!"
+          alt="Donate with PayPal button"
+          class="mx-auto block hover:opacity-90 transition-opacity cursor-pointer"
+        />
+        <img
+          alt=""
+          border="0"
+          src="https://www.paypal.com/en_DO/i/scr/pixel.gif"
+          width="1"
+          height="1"
+        />
+      </form>
+      <p class="text-xs text-brand-text/50 mt-4">Pago seguro procesado por PayPal</p>
+    </div>
+  </section>
+
+  <!-- CTA Volunteer -->
+  <section class="bg-cream py-16 text-center border-t border-brand-border">
+    <div class="max-w-xl mx-auto px-6">
+      <h3 class="text-xl font-serif font-bold text-brand-red mb-3">¿No puedes donar ahora?</h3>
+      <p class="text-brand-text/70 text-sm mb-6">
+        Tu tiempo también es un regalo invaluable. Únete como voluntario y transforma vidas.
+      </p>
+      <a href="/voluntariado" class="btn-outline inline-block">Ser Voluntario →</a>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,209 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Inicio" description="Fundación Corazón Late — Sembrando fe, valores e identidad en la niñez y adolescencia.">
+
+  <!-- Hero -->
+  <section class="relative bg-brand-red text-white overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/hero-home.jpg"
+        alt="Niños con la Fundación Corazón Late"
+        class="w-full h-full object-cover opacity-40"
+        onerror="this.style.display='none';"
+      />
+    </div>
+    <div class="relative max-w-4xl mx-auto px-6 py-24 md:py-36 text-center">
+      <img
+        src="/images/logo-white.png"
+        alt="Corazón Late"
+        class="h-20 md:h-28 mx-auto mb-6"
+        onerror="this.style.display='none';"
+      />
+      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-md">
+        Fundación Corazón Late
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-xl mx-auto mb-8">
+        Sembrando fe, valores e identidad en la niñez y adolescencia.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/voluntariado" class="btn-primary shadow-lg">Ser Voluntario</a>
+        <a href="/donaciones" class="bg-white/10 backdrop-blur-sm border border-white/40 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition-colors">Donar Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Quiénes Somos? -->
+  <section class="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="section-title">¿Quiénes Somos?</h2>
+      <span class="section-underline"></span>
+      <p class="text-brand-text/80 leading-relaxed mb-4">
+        Corazón Late es una fundación cristiana dedicada a sembrar fe, valores e identidad en la niñez y adolescencia.
+        A través de jornadas de alcance, apoyo familiar, talleres, actividades recreativas y espacios seguros,
+        trabajamos para que cada niño conozca el amor de Dios y descubra su propósito.
+      </p>
+      <a href="/nosotros" class="btn-outline inline-block mt-4">Conoce más →</a>
+    </div>
+    <div class="rounded-2xl overflow-hidden shadow-lg">
+      <img
+        src="/images/quienes-somos.jpg"
+        alt="Manos en corazón"
+        class="w-full h-72 md:h-80 object-cover"
+        onerror="this.setAttribute('src', 'https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80');"
+      />
+    </div>
+  </section>
+
+  <!-- Sé parte CTA -->
+  <section class="bg-white py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="section-title">Sé parte</h2>
+      <span class="section-underline mx-auto"></span>
+    </div>
+
+    <!-- Sé Luz — dark overlay section -->
+    <div class="relative mt-6 overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="/images/cta-luz.jpg"
+          alt="Sé Luz"
+          class="w-full h-full object-cover"
+          onerror="this.setAttribute('src', 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80');"
+        />
+        <div class="absolute inset-0 bg-black/55"></div>
+      </div>
+      <div class="relative max-w-3xl mx-auto px-6 py-20 text-center text-white">
+        <h3 class="text-3xl md:text-4xl font-serif font-bold mb-4">Sé Luz en la Vida de Alguien</h3>
+        <p class="text-white/85 mb-8 text-lg">
+          Cada niño lleva un propósito. Tú puedes ser parte de que lo descubra.
+        </p>
+        <a href="/voluntariado" class="btn-primary shadow-lg">Únete como voluntario</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campaña -->
+  <section class="bg-cream py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Campaña Activa</span>
+          <h2 class="text-3xl font-serif font-bold text-brand-red mt-2 mb-4">Every Child. Every Chance.</h2>
+          <p class="text-brand-text/80 leading-relaxed mb-6">
+            Ayúdanos a llegarle a cada niño con lo que necesita: kits escolares, alimentación diaria y
+            mentores que crean en su futuro.
+          </p>
+          <ul class="space-y-2 mb-6">
+            {[
+              '5,000 kits escolares',
+              '1,000 comidas diarias',
+              'Talleres de mentoría',
+            ].map(item => (
+              <li class="flex items-center gap-2 text-sm text-brand-text/80">
+                <svg class="w-4 h-4 text-brand-terracotta flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/donaciones" class="btn-primary inline-block">Donar ahora</a>
+        </div>
+        <div class="rounded-2xl overflow-hidden">
+          <img
+            src="/images/campaign.jpg"
+            alt="Every Child Every Chance"
+            class="w-full h-64 object-cover"
+            onerror="this.setAttribute('src', 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80');"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="section-title">Conoce a Nuestro Equipo</h2>
+      <span class="section-underline mx-auto"></span>
+      <p class="text-brand-text/70 mb-10 max-w-lg mx-auto">
+        Personas comprometidas que dan lo mejor de sí por los niños y jóvenes de nuestra comunidad.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { name: 'Voluntario 1', role: 'Coordinador', photo: '/images/team-1.jpg' },
+          { name: 'Voluntario 2', role: 'Educación', photo: '/images/team-2.jpg' },
+          { name: 'Voluntario 3', role: 'Logística', photo: '/images/team-3.jpg' },
+          { name: 'Voluntario 4', role: 'Arte y Música', photo: '/images/team-4.jpg' },
+        ].map(member => (
+          <div class="text-center">
+            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-brand-border mx-auto mb-3 overflow-hidden">
+              <img
+                src={member.photo}
+                alt={member.name}
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none';"
+              />
+            </div>
+            <p class="font-semibold text-sm text-brand-text">{member.name}</p>
+            <p class="text-xs text-brand-text/60">{member.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="bg-cream py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Historias que Inspiran</h2>
+        <span class="section-underline mx-auto"></span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          {
+            quote: 'Ser voluntario en Corazón Late cambió mi vida tanto como espero haber cambiado la de los niños.',
+            name: 'María G.',
+            role: 'Voluntaria',
+          },
+          {
+            quote: 'Ver a cada niño descubrir su potencial es la mayor recompensa que existe.',
+            name: 'Carlos R.',
+            role: 'Voluntario',
+          },
+          {
+            quote: 'Esta fundación me enseñó que el amor en acción es lo más poderoso del mundo.',
+            name: 'Laura M.',
+            role: 'Voluntaria',
+          },
+        ].map(t => (
+          <div class="bg-white rounded-2xl p-6 shadow-sm">
+            <p class="text-brand-text/70 text-sm leading-relaxed italic mb-4">"{t.quote}"</p>
+            <p class="font-semibold text-sm text-brand-text">{t.name}</p>
+            <p class="text-xs text-brand-text/50">{t.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-brand-red text-white py-20 text-center">
+    <div class="max-w-2xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
+        No Servimos Solos. Tú Lo Haces Posible.
+      </h2>
+      <p class="text-white/80 mb-8">
+        Únete como voluntario o apoya con una donación. Cada corazón cuenta.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/voluntariado" class="bg-white text-brand-red font-bold px-8 py-3 rounded-full hover:bg-cream transition-colors">Ser Voluntario</a>
+        <a href="/donaciones" class="border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors">Donar</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

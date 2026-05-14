@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VolunteerForm from '../components/VolunteerForm';
+---
+
+<Layout
+  title="Ser Voluntario"
+  description="Únete como voluntario a Fundación Corazón Late y sé parte del cambio en la vida de niños y jóvenes."
+>
+  <div class="min-h-screen bg-cream">
+    <div class="max-w-lg mx-auto">
+      <VolunteerForm client:load />
+    </div>
+  </div>
+</Layout>
