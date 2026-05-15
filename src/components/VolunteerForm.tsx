@@ -5,6 +5,7 @@ type FormData = {
   edad: string;
   telefono: string;
   correo: string;
+  voluntariado_previo: string;
   disponibilidad: string[];
   areas: string[];
   motivacion: string;
@@ -17,6 +18,7 @@ const initialData: FormData = {
   edad: '',
   telefono: '',
   correo: '',
+  voluntariado_previo: '',
   disponibilidad: [],
   areas: [],
   motivacion: '',
@@ -303,6 +305,8 @@ export default function VolunteerForm() {
                       type="radio"
                       name="voluntariado_previo"
                       value={opt}
+                      checked={data.voluntariado_previo === opt}
+                      onChange={() => set('voluntariado_previo', opt)}
                       className="accent-brand-terracotta"
                     />
                     <span className="text-sm">{opt}</span>

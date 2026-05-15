@@ -1,58 +1,319 @@
 backend:
   name: git-gateway
   branch: master
+  commit_messages:
+    create: 'CMS: crear {{collection}} "{{slug}}"'
+    update: 'CMS: actualizar {{collection}} "{{slug}}"'
+    delete: 'CMS: eliminar {{collection}} "{{slug}}"'
+    uploadMedia: 'CMS: subir imagen "{{path}}"'
+    deleteMedia: 'CMS: eliminar imagen "{{path}}"'
 
 media_folder: public/images
 public_folder: /images
 
 locale: es
 
+site_url: https://corazonlate.org
+display_url: https://corazonlate.org
+logo_url: /images/logo.png
+
 collections:
+
+  # ───────── 1. Configuración general ─────────
   - name: settings
-    label: Configuración del Sitio
+    label: 'Configuración del Sitio'
+    description: 'Información general que aparece en todas las páginas (footer, contacto, redes sociales).'
     files:
       - name: general
         label: General
         file: content/settings.json
         fields:
-          - { label: Nombre del sitio, name: site_name, widget: string }
-          - { label: Correo de contacto, name: contact_email, widget: string }
-          - { label: Teléfono, name: phone, widget: string, required: false }
-          - { label: Instagram URL, name: instagram_url, widget: string, required: false }
-          - { label: Facebook URL, name: facebook_url, widget: string, required: false }
+          - { label: 'Nombre del sitio', name: site_name, widget: string, hint: 'Aparece en el footer y título del navegador' }
+          - { label: 'Frase del sitio (tagline)', name: tagline, widget: text, hint: 'Frase corta debajo del logo en el footer' }
+          - { label: 'Correo de contacto', name: contact_email, widget: string, hint: 'Correo principal visible en footer y página de contacto' }
+          - { label: 'Teléfono', name: phone, widget: string, required: false, hint: 'Opcional. Si está vacío no se muestra' }
+          - { label: 'URL de Instagram', name: instagram_url, widget: string, required: false }
+          - { label: 'Usuario de Instagram (visible)', name: instagram_handle, widget: string, required: false, hint: 'Ejemplo: @fundacioncorazonlate' }
+          - { label: 'URL de Facebook', name: facebook_url, widget: string, required: false, hint: 'Dejar vacío para ocultar el ícono' }
 
+  # ───────── 2. Página de Inicio ─────────
   - name: home
-    label: Página de Inicio
+    label: 'Página de Inicio'
+    description: 'Edita todos los textos e imágenes de la página principal.'
     files:
       - name: content
-        label: Contenido
+        label: 'Contenido del Home'
         file: content/home.json
         fields:
-          - { label: Título Hero, name: hero_title, widget: string }
-          - { label: Subtítulo Hero, name: hero_subtitle, widget: text }
-          - { label: Texto Quiénes Somos, name: about_text, widget: text }
-          - { label: Título Campaña, name: campaign_title, widget: string }
-          - { label: Texto Campaña, name: campaign_text, widget: text }
 
-  - name: team
-    label: Equipo
-    label_singular: Miembro del Equipo
-    folder: content/team
-    create: true
-    slug: "{{name}}"
-    fields:
-      - { label: Nombre, name: name, widget: string }
-      - { label: Rol, name: role, widget: string }
-      - { label: Foto, name: photo, widget: image, required: false }
-      - { label: Biografía, name: bio, widget: text, required: false }
+          # HERO
+          - label: '🟥 HERO (sección principal)'
+            name: hero
+            widget: object
+            fields:
+              - { label: 'Etiqueta superior', name: badge, widget: string, hint: 'Texto pequeño arriba del título' }
+              - { label: 'Título — primera parte', name: title_line1, widget: string, hint: 'Ej: "Un latido que"' }
+              - { label: 'Palabra a destacar', name: title_highlight, widget: string, hint: 'Esta palabra del título aparece en color terracotta y subrayada' }
+              - { label: 'Título — segunda parte', name: title_line2, widget: string, hint: 'Ej: "transforma vidas"' }
+              - { label: 'Subtítulo / descripción', name: subtitle, widget: text }
+              - { label: 'Botón primario — texto', name: cta_primary_label, widget: string }
+              - { label: 'Botón primario — URL', name: cta_primary_url, widget: string, hint: 'Ej: /voluntariado' }
+              - { label: 'Botón secundario — texto', name: cta_secondary_label, widget: string }
+              - { label: 'Botón secundario — URL', name: cta_secondary_url, widget: string }
+              - { label: 'Insignia: número', name: badge_number, widget: string, hint: 'Ej: +500' }
+              - { label: 'Insignia: etiqueta', name: badge_label, widget: string, hint: 'Ej: Niños alcanzados' }
+              - label: 'Slides (fotos que rotan)'
+                name: slides
+                widget: list
+                summary: '{{fields.alt}}'
+                fields:
+                  - { label: Foto, name: src, widget: image }
+                  - { label: 'Descripción (alt)', name: alt, widget: string }
 
-  - name: testimonials
-    label: Testimonios
-    label_singular: Testimonio
-    folder: content/testimonials
-    create: true
-    slug: "{{fields.name}}"
-    fields:
-      - { label: Nombre, name: name, widget: string }
-      - { label: Rol, name: role, widget: string }
-      - { label: Testimonio, name: quote, widget: text }
+          # STATS
+          - label: '📊 ESTADÍSTICAS (3 tarjetas)'
+            name: stats
+            widget: list
+            summary: '{{fields.number}} — {{fields.label}}'
+            fields:
+              - { label: Ícono (emoji), name: icon, widget: string }
+              - { label: Número, name: number, widget: string }
+              - { label: Etiqueta, name: label, widget: string }
+
+          # MISSION
+          - label: '🎯 MISIÓN (¿Por qué Corazón Late?)'
+            name: mission
+            widget: object
+            fields:
+              - { label: 'Etiqueta superior', name: kicker, widget: string }
+              - { label: Título, name: title, widget: string }
+              - { label: 'Palabra a destacar', name: title_highlight, widget: string }
+              - { label: 'Párrafo 1', name: paragraph_1, widget: text, hint: 'Puedes usar **texto** para negritas' }
+              - { label: 'Párrafo 2', name: paragraph_2, widget: text }
+              - { label: 'Imagen de la sección', name: image, widget: image }
+              - { label: 'Cita (tarjeta flotante)', name: quote, widget: text }
+              - { label: 'Fuente de la cita', name: quote_source, widget: string, hint: 'Ej: Proverbios 11:18' }
+
+          # SERVICES
+          - label: '💼 LO QUE HACEMOS (4 servicios)'
+            name: services
+            widget: object
+            fields:
+              - { label: 'Etiqueta superior', name: kicker, widget: string }
+              - { label: Título, name: title, widget: string }
+              - { label: 'Palabra a destacar', name: title_highlight, widget: string }
+              - { label: Subtítulo, name: subtitle, widget: text }
+              - label: 'Tarjetas de servicios'
+                name: cards
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Título, name: title, widget: string }
+                  - { label: Descripción, name: desc, widget: text }
+
+          # GALLERY
+          - label: '📸 GALERÍA (6 fotos de actividades)'
+            name: gallery
+            widget: object
+            fields:
+              - { label: 'Etiqueta superior', name: kicker, widget: string }
+              - { label: Título, name: title, widget: string }
+              - { label: 'Palabra a destacar', name: title_highlight, widget: string }
+              - { label: Subtítulo, name: subtitle, widget: text }
+              - label: 'Fotos de la galería'
+                name: items
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Foto, name: src, widget: image }
+                  - { label: 'Descripción (alt)', name: alt, widget: string }
+                  - { label: 'Título visible', name: title, widget: string }
+
+          # BANNER
+          - label: '🔥 BANNER DE IMPACTO (cita inspiradora con fondo rotativo)'
+            name: banner
+            widget: object
+            fields:
+              - { label: Cita, name: quote, widget: text }
+              - { label: Firma, name: signature, widget: string }
+              - { label: 'Botón primario — texto', name: cta_primary_label, widget: string }
+              - { label: 'Botón primario — URL', name: cta_primary_url, widget: string }
+              - { label: 'Botón secundario — texto', name: cta_secondary_label, widget: string }
+              - { label: 'Botón secundario — URL', name: cta_secondary_url, widget: string }
+              - label: 'Fotos de fondo (rotan)'
+                name: slides
+                widget: list
+                field: { label: Foto, name: src, widget: image }
+
+          # TESTIMONIALS
+          - label: '💬 TESTIMONIOS'
+            name: testimonials
+            widget: object
+            fields:
+              - { label: 'Etiqueta superior', name: kicker, widget: string }
+              - { label: Título, name: title, widget: string }
+              - { label: 'Palabra a destacar', name: title_highlight, widget: string }
+              - label: 'Testimonios'
+                name: items
+                widget: list
+                summary: '{{fields.author}}'
+                fields:
+                  - { label: Cita, name: quote, widget: text }
+                  - { label: Nombre, name: author, widget: string }
+                  - { label: Rol, name: role, widget: string }
+
+          # FINAL CTA
+          - label: '🎯 LLAMADO FINAL'
+            name: final_cta
+            widget: object
+            fields:
+              - { label: 'Título — línea 1', name: title_line1, widget: string }
+              - { label: 'Título — línea 2', name: title_line2, widget: string }
+              - { label: Subtítulo, name: subtitle, widget: text }
+              - { label: 'Botón primario — texto', name: cta_primary_label, widget: string }
+              - { label: 'Botón primario — URL', name: cta_primary_url, widget: string }
+              - { label: 'Botón secundario — texto', name: cta_secondary_label, widget: string }
+              - { label: 'Botón secundario — URL', name: cta_secondary_url, widget: string }
+
+  # ───────── 3. Página Nosotros ─────────
+  - name: nosotros
+    label: 'Página Nosotros'
+    description: 'Edita los textos de la página "Sobre Nosotros".'
+    files:
+      - name: content
+        label: 'Contenido de Nosotros'
+        file: content/nosotros.json
+        fields:
+          - label: 'Encabezado (banner rojo arriba)'
+            name: header
+            widget: object
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: Subtítulo, name: subtitle, widget: string }
+          - label: 'Misión'
+            name: mission
+            widget: object
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: Texto, name: text, widget: text }
+          - label: 'Visión'
+            name: vision
+            widget: object
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: Texto, name: text, widget: text }
+          - label: 'Valores'
+            name: values
+            widget: object
+            fields:
+              - { label: Título de la sección, name: title, widget: string }
+              - label: 'Lista de valores'
+                name: items
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Ícono (emoji), name: icon, widget: string }
+                  - { label: Título, name: title, widget: string }
+                  - { label: Descripción, name: desc, widget: text }
+          - label: 'Historia'
+            name: history
+            widget: object
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: 'Párrafo 1', name: paragraph_1, widget: text }
+              - { label: 'Párrafo 2', name: paragraph_2, widget: text }
+          - label: 'Llamado a la acción (footer de la página)'
+            name: cta
+            widget: object
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: 'Botón primario — texto', name: primary_label, widget: string }
+              - { label: 'Botón primario — URL', name: primary_url, widget: string }
+              - { label: 'Botón secundario — texto', name: secondary_label, widget: string }
+              - { label: 'Botón secundario — URL', name: secondary_url, widget: string }
+
+  # ───────── 4. Página Donaciones ─────────
+  - name: donaciones
+    label: 'Página Donaciones'
+    description: 'Edita la información bancaria, PayPal y textos de la página de donaciones.'
+    files:
+      - name: content
+        label: 'Contenido de Donaciones'
+        file: content/donaciones.json
+        fields:
+          - label: 'Encabezado'
+            name: header
+            widget: object
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: Subtítulo, name: subtitle, widget: string }
+          - label: 'Introducción'
+            name: intro
+            widget: object
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: Texto, name: text, widget: text }
+          - label: '💵 Tarjetas de impacto (3 montos)'
+            name: impact_cards
+            widget: list
+            summary: '{{fields.amount}}'
+            fields:
+              - { label: Monto, name: amount, widget: string, hint: 'Ej: $10' }
+              - { label: Impacto, name: impact, widget: text }
+          - label: '💳 PayPal'
+            name: paypal
+            widget: object
+            fields:
+              - { label: 'Mostrar opción PayPal', name: enabled, widget: boolean, default: true }
+              - { label: 'ID del botón hosted', name: hosted_button_id, widget: string, hint: 'Se obtiene desde tu cuenta PayPal al crear un botón de donación' }
+              - { label: 'Etiqueta del botón', name: label, widget: string }
+          - label: '🏦 Transferencia Bancaria'
+            name: bank
+            widget: object
+            fields:
+              - { label: 'Mostrar transferencia bancaria', name: enabled, widget: boolean, default: true }
+              - { label: 'Título de la sección', name: label, widget: string }
+              - label: 'Datos bancarios'
+                name: fields
+                widget: list
+                summary: '{{fields.label}}: {{fields.value}}'
+                fields:
+                  - { label: 'Etiqueta (ej. Banco)', name: label, widget: string }
+                  - { label: Valor, name: value, widget: string }
+          - label: 'Llamado al voluntariado (footer de la página)'
+            name: volunteer_cta
+            widget: object
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: Texto, name: text, widget: text }
+              - { label: 'Texto del botón', name: button_label, widget: string }
+              - { label: 'URL del botón', name: button_url, widget: string }
+
+  # ───────── 5. Página Contacto ─────────
+  - name: contacto
+    label: 'Página Contacto'
+    description: 'Edita los textos de la página de contacto.'
+    files:
+      - name: content
+        label: 'Contenido de Contacto'
+        file: content/contacto.json
+        fields:
+          - label: 'Encabezado'
+            name: header
+            widget: object
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: Subtítulo, name: subtitle, widget: string }
+          - label: 'Información de contacto'
+            name: info
+            widget: object
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: Texto, name: text, widget: text }
+          - label: 'Formulario'
+            name: form
+            widget: object
+            fields:
+              - { label: 'Título del formulario', name: title, widget: string }
+              - { label: 'Título de éxito', name: success_title, widget: string }
+              - { label: 'Mensaje de éxito', name: success_text, widget: string }

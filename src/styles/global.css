@@ -30,3 +30,112 @@
     @apply block w-16 h-1 bg-brand-gold mt-2 mb-6 rounded;
   }
 }
+
+/* ============== Animations ============== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(20px); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes count-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+.animate-float       { animation: float 6s ease-in-out infinite; }
+.animate-float-slow  { animation: float-slow 8s ease-in-out infinite; }
+.animate-pulse-soft  { animation: pulse-soft 3s ease-in-out infinite; }
+
+/* ============== Scroll-reveal ============== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delays */
+.reveal[data-delay="100"] { transition-delay: 100ms; }
+.reveal[data-delay="200"] { transition-delay: 200ms; }
+.reveal[data-delay="300"] { transition-delay: 300ms; }
+.reveal[data-delay="400"] { transition-delay: 400ms; }
+.reveal[data-delay="500"] { transition-delay: 500ms; }
+.reveal-scale[data-delay="100"] { transition-delay: 100ms; }
+.reveal-scale[data-delay="200"] { transition-delay: 200ms; }
+.reveal-scale[data-delay="300"] { transition-delay: 300ms; }
+.reveal-scale[data-delay="400"] { transition-delay: 400ms; }
+.reveal-scale[data-delay="500"] { transition-delay: 500ms; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-scale { opacity: 1; transform: none; transition: none; }
+  .animate-float, .animate-float-slow, .animate-pulse-soft { animation: none; }
+  .hero-slide, .banner-slide { animation: none !important; }
+  .hero-slide:not(:first-child), .banner-slide:not(:first-child) { opacity: 0; }
+}
+
+/* ============== Hero slideshow (4 slides, 20s cycle) ============== */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: heroFade 20s infinite;
+  will-change: opacity;
+}
+.hero-slide:nth-child(1) { animation-delay: 0s; }
+.hero-slide:nth-child(2) { animation-delay: 5s; }
+.hero-slide:nth-child(3) { animation-delay: 10s; }
+.hero-slide:nth-child(4) { animation-delay: 15s; }
+
+@keyframes heroFade {
+  0%, 22%  { opacity: 1; }
+  28%, 95% { opacity: 0; }
+  100%     { opacity: 1; }
+}
+
+/* ============== Banner slideshow (3 slides, 18s cycle) ============== */
+.banner-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: bannerFade 18s infinite;
+  will-change: opacity;
+}
+.banner-slide:nth-child(1) { animation-delay: 0s; }
+.banner-slide:nth-child(2) { animation-delay: 6s; }
+.banner-slide:nth-child(3) { animation-delay: 12s; }
+
+@keyframes bannerFade {
+  0%, 28%  { opacity: 1; }
+  33%, 95% { opacity: 0; }
+  100%     { opacity: 1; }
+}

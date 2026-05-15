@@ -1,0 +1,15 @@
+{
+  "header": {
+    "title": "Contacto",
+    "subtitle": "Estamos aquí para escucharte. Escríbenos."
+  },
+  "info": {
+    "title": "Hablemos",
+    "text": "Si tienes preguntas, quieres aliarte con nuestra fundación, o simplemente deseas conocer más sobre lo que hacemos, escríbenos."
+  },
+  "form": {
+    "title": "Envíanos un mensaje",
+    "success_title": "¡Mensaje recibido!",
+    "success_text": "Nos comunicaremos contigo pronto."
+  }
+}

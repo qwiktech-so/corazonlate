@@ -1,7 +1,106 @@
 {
-  "hero_title": "Fundación Corazón Late",
-  "hero_subtitle": "Sembrando fe, valores e identidad en la niñez y adolescencia.",
-  "about_text": "Corazón Late es una fundación cristiana dedicada a sembrar fe, valores e identidad en la niñez y adolescencia. A través de jornadas de alcance, apoyo familiar, talleres, actividades recreativas y espacios seguros, trabajamos para que cada niño conozca el amor de Dios y descubra su propósito.",
-  "campaign_title": "Every Child. Every Chance.",
-  "campaign_text": "Ayúdanos a llegarle a cada niño con lo que necesita: kits escolares, alimentación diaria y mentores que crean en su futuro."
+  "hero": {
+    "badge": "Fundación Corazón Late",
+    "title_line1": "Un latido que",
+    "title_highlight": "latido",
+    "title_line2": "transforma vidas",
+    "subtitle": "Sembramos fe, valores e identidad en la niñez y adolescencia. Cada niño merece ser visto, amado y formado con propósito.",
+    "cta_primary_label": "Ser Voluntario",
+    "cta_primary_url": "/voluntariado",
+    "cta_secondary_label": "Donar Ahora",
+    "cta_secondary_url": "/donaciones",
+    "badge_number": "+500",
+    "badge_label": "Niños alcanzados",
+    "slides": [
+      { "src": "/images/nina-sol.jpg",                 "alt": "Niña con sol pintado en la mejilla" },
+      { "src": "/images/gallery/taller-banner.jpg",    "alt": "Voluntaria frente al banner Corazón Late" },
+      { "src": "/images/gallery/mentoria.jpg",         "alt": "Mentoría con jóvenes" },
+      { "src": "/images/gallery/sonrisa-timida.jpg",   "alt": "Niña sonriendo tímidamente" }
+    ]
+  },
+  "stats": [
+    { "number": "500+",  "label": "Niños Alcanzados",    "icon": "❤️" },
+    { "number": "50+",   "label": "Voluntarios Activos", "icon": "🤝" },
+    { "number": "100%",  "label": "Amor en Acción",      "icon": "✨" }
+  ],
+  "mission": {
+    "kicker": "Nuestra misión",
+    "title": "¿Por qué Corazón Late?",
+    "title_highlight": "Corazón Late",
+    "paragraph_1": "Creemos que cada niño merece ser visto, amado y formado con fe, valores e identidad. No somos solo una fundación — somos una **familia que late** en el corazón de la comunidad.",
+    "paragraph_2": "Llegamos a comunidades vulnerables con jornadas de alcance, talleres, actividades recreativas y espacios seguros donde cada joven puede conocer su propósito.",
+    "image": "/images/quienes-somos.jpg",
+    "quote": "El que siembra en bien, segará misericordia.",
+    "quote_source": "Proverbios 11:18"
+  },
+  "services": {
+    "kicker": "Nuestro trabajo",
+    "title": "Lo que Hacemos",
+    "title_highlight": "Hacemos",
+    "subtitle": "Servimos con amor en cuatro frentes para alcanzar a la niñez y adolescencia de forma integral.",
+    "cards": [
+      {
+        "title": "Jornadas de Alcance",
+        "desc": "Llegamos a las comunidades con amor, dinámicas, juegos y la Palabra de Dios para tocar cada corazón."
+      },
+      {
+        "title": "Talleres y Formación",
+        "desc": "Espacios educativos, mentoría y acompañamiento para que niños y jóvenes crezcan con propósito."
+      },
+      {
+        "title": "Arte y Creatividad",
+        "desc": "Danza, música, manualidades y pintura como lenguaje del alma y herramienta de transformación."
+      },
+      {
+        "title": "Apoyo Familiar",
+        "desc": "Acompañamos a las familias en su camino de fe, fortaleciendo el hogar como base del cambio."
+      }
+    ]
+  },
+  "gallery": {
+    "kicker": "Galería",
+    "title": "Nuestras Actividades",
+    "title_highlight": "Actividades",
+    "subtitle": "Mira cómo tocamos vidas cada día. Cada foto es un latido.",
+    "items": [
+      { "src": "/images/gallery/jornada-calle.jpg",  "alt": "Voluntarios y comunidad en jornada de alcance", "title": "Jornadas de Alcance" },
+      { "src": "/images/gallery/taller-banner.jpg",  "alt": "Voluntaria dando charla a jóvenes",             "title": "Talleres y Formación" },
+      { "src": "/images/gallery/fe.jpg",             "alt": "Voluntaria con niños y figuras de Jesús",       "title": "Fe y Valores" },
+      { "src": "/images/gallery/navidad.jpg",        "alt": "Niños con regalos en evento navideño",          "title": "Eventos Especiales" },
+      { "src": "/images/gallery/mentoria.jpg",       "alt": "Mentoría con niñas",                            "title": "Mentoría" },
+      { "src": "/images/gallery/sonrisa-timida.jpg", "alt": "Niña sonriendo tímidamente",                    "title": "Cada Sonrisa Cuenta" }
+    ]
+  },
+  "banner": {
+    "quote": "Cada niño que conoce el amor de Dios se convierte en una chispa que ilumina su comunidad.",
+    "signature": "Fundación Corazón Late",
+    "cta_primary_label": "Quiero Colaborar",
+    "cta_primary_url": "/voluntariado",
+    "cta_secondary_label": "Hacer una Donación",
+    "cta_secondary_url": "/donaciones",
+    "slides": [
+      "/images/gallery/jornada-calle.jpg",
+      "/images/gallery/navidad.jpg",
+      "/images/gallery/taller-banner.jpg"
+    ]
+  },
+  "testimonials": {
+    "kicker": "Testimonios",
+    "title": "Historias que Inspiran",
+    "title_highlight": "Inspiran",
+    "items": [
+      { "quote": "Ser voluntario en Corazón Late cambió mi vida tanto como espero haber cambiado la de los niños.", "author": "María G.", "role": "Voluntaria" },
+      { "quote": "Ver a cada niño descubrir su potencial es la mayor recompensa que existe.",                       "author": "Carlos R.", "role": "Voluntario" },
+      { "quote": "Esta fundación me enseñó que el amor en acción es lo más poderoso del mundo.",                     "author": "Laura M.", "role": "Voluntaria" }
+    ]
+  },
+  "final_cta": {
+    "title_line1": "¡Tu corazón también puede",
+    "title_line2": "latir con el nuestro!",
+    "subtitle": "No hacen falta grandes recursos — solo un corazón dispuesto a servir. Únete como voluntario o apoya con una donación.",
+    "cta_primary_label": "❤️ Ser Voluntario",
+    "cta_primary_url": "/voluntariado",
+    "cta_secondary_label": "Donar Ahora →",
+    "cta_secondary_url": "/donaciones"
+  }
 }

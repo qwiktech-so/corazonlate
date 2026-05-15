@@ -1,0 +1,37 @@
+{
+  "header": {
+    "title": "Donaciones",
+    "subtitle": "Tu apoyo hace posible que cada niño descubra su propósito."
+  },
+  "intro": {
+    "title": "Cada aporte cuenta",
+    "text": "Tu donación nos permite seguir sembrando fe, esperanza y amor en la vida de niños y adolescentes. No servimos solos — tú lo haces posible."
+  },
+  "impact_cards": [
+    { "amount": "$10", "impact": "cubre materiales educativos para un niño durante un mes." },
+    { "amount": "$25", "impact": "financia una jornada recreativa completa para 5 niños." },
+    { "amount": "$50", "impact": "apoya un taller de mentoría y liderazgo juvenil." }
+  ],
+  "paypal": {
+    "enabled": true,
+    "hosted_button_id": "XE3R99LUD79GU",
+    "label": "Dona con PayPal"
+  },
+  "bank": {
+    "enabled": true,
+    "label": "Transferencia Bancaria",
+    "fields": [
+      { "label": "Banco",          "value": "BHD León" },
+      { "label": "Titular",        "value": "Shaerena Díaz" },
+      { "label": "Cédula",         "value": "402-5163267-1" },
+      { "label": "No. de cuenta",  "value": "32105820014" },
+      { "label": "Tipo",           "value": "Cuenta de Ahorro" }
+    ]
+  },
+  "volunteer_cta": {
+    "title": "¿No puedes donar ahora?",
+    "text": "Tu tiempo también es un regalo invaluable. Únete como voluntario y transforma vidas.",
+    "button_label": "Ser Voluntario →",
+    "button_url": "/voluntariado"
+  }
+}

@@ -6,3 +6,13 @@ node_modules/
 
 # Local Netlify folder
 .netlify
+
+# Photos folder = original high-res sources (kept locally only).
+# Optimized versions live in public/images/gallery/ and ARE tracked.
+photos/
+
+# OS / Editor noise
+Thumbs.db
+*.log
+.vscode/
+.idea/

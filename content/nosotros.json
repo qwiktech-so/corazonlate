@@ -1,0 +1,37 @@
+{
+  "header": {
+    "title": "Sobre Nosotros",
+    "subtitle": "Conoce nuestra historia, misión y el equipo detrás de Corazón Late."
+  },
+  "mission": {
+    "title": "Nuestra Misión",
+    "text": "Corazón Late es una fundación cristiana dedicada a sembrar fe, valores e identidad en la niñez y adolescencia. A través de jornadas de alcance, apoyo familiar, talleres, actividades recreativas y espacios seguros, trabajamos para que cada niño conozca el amor de Dios y descubra su propósito."
+  },
+  "vision": {
+    "title": "Nuestra Visión",
+    "text": "Ver una generación de niños y jóvenes que conozcan su identidad en Dios, que vivan con propósito, y que sean agentes de cambio en sus familias y comunidades."
+  },
+  "values": {
+    "title": "Nuestros Valores",
+    "items": [
+      { "icon": "❤️", "title": "Amor",        "desc": "Servimos desde el amor incondicional de Dios, no desde obligación." },
+      { "icon": "🙏", "title": "Fe",          "desc": "Creemos en el potencial de cada niño y joven como portador de la imagen de Dios." },
+      { "icon": "🤝", "title": "Servicio",    "desc": "El servicio es nuestra expresión más genuina de amor hacia el prójimo." },
+      { "icon": "✨", "title": "Integridad",  "desc": "Actuamos con transparencia, responsabilidad y coherencia en todo lo que hacemos." },
+      { "icon": "🌱", "title": "Crecimiento", "desc": "Fomentamos el desarrollo integral — espiritual, emocional e intelectual." },
+      { "icon": "🏠", "title": "Comunidad",   "desc": "Construimos vínculos sanos y familias fortalecidas por el amor de Dios." }
+    ]
+  },
+  "history": {
+    "title": "Nuestra Historia",
+    "paragraph_1": "Fundación Corazón Late nació del deseo de un grupo de jóvenes comprometidos con transformar su comunidad a través del amor de Dios. Lo que comenzó como pequeñas jornadas de alcance se ha convertido en un movimiento que abraza a centenares de niños y jóvenes cada año.",
+    "paragraph_2": "Cada actividad, cada taller, cada sonrisa de un niño es testimonio de que cuando el amor actúa, las vidas cambian. Hoy, seguimos latiendo fuerte — y lo hacemos junto a personas como tú."
+  },
+  "cta": {
+    "title": "¿Quieres ser parte de esta historia?",
+    "primary_label": "Ser Voluntario",
+    "primary_url": "/voluntariado",
+    "secondary_label": "Donar",
+    "secondary_url": "/donaciones"
+  }
+}

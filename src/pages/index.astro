@@ -1,209 +1,328 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import home from '../../content/home.json';
 ---
 
-<Layout title="Inicio" description="Fundación Corazón Late — Sembrando fe, valores e identidad en la niñez y adolescencia.">
+<Layout title="Inicio" description="Fundación Corazón Late — Sembrando fe, valores e identidad en la niñez y adolescencia de República Dominicana.">
 
-  <!-- Hero -->
-  <section class="relative bg-brand-red text-white overflow-hidden">
-    <div class="absolute inset-0">
-      <img
-        src="/images/hero-home.jpg"
-        alt="Niños con la Fundación Corazón Late"
-        class="w-full h-full object-cover opacity-40"
-        onerror="this.style.display='none';"
-      />
-    </div>
-    <div class="relative max-w-4xl mx-auto px-6 py-24 md:py-36 text-center">
-      <img
-        src="/images/logo-white.png"
-        alt="Corazón Late"
-        class="h-20 md:h-28 mx-auto mb-6"
-        onerror="this.style.display='none';"
-      />
-      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-md">
-        Fundación Corazón Late
-      </h1>
-      <p class="text-lg md:text-xl text-white/90 max-w-xl mx-auto mb-8">
-        Sembrando fe, valores e identidad en la niñez y adolescencia.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/voluntariado" class="btn-primary shadow-lg">Ser Voluntario</a>
-        <a href="/donaciones" class="bg-white/10 backdrop-blur-sm border border-white/40 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition-colors">Donar Ahora</a>
-      </div>
-    </div>
-  </section>
+  <!-- ════════════ HERO ════════════ -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-cream via-cream to-brand-terracotta/10">
+    <div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-brand-terracotta/15 blur-3xl animate-float pointer-events-none"></div>
+    <div class="absolute bottom-[-30%] left-[-15%] w-[500px] h-[500px] rounded-full bg-brand-gold/10 blur-3xl animate-float-slow pointer-events-none"></div>
 
-  <!-- ¿Quiénes Somos? -->
-  <section class="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    <div>
-      <h2 class="section-title">¿Quiénes Somos?</h2>
-      <span class="section-underline"></span>
-      <p class="text-brand-text/80 leading-relaxed mb-4">
-        Corazón Late es una fundación cristiana dedicada a sembrar fe, valores e identidad en la niñez y adolescencia.
-        A través de jornadas de alcance, apoyo familiar, talleres, actividades recreativas y espacios seguros,
-        trabajamos para que cada niño conozca el amor de Dios y descubra su propósito.
-      </p>
-      <a href="/nosotros" class="btn-outline inline-block mt-4">Conoce más →</a>
-    </div>
-    <div class="rounded-2xl overflow-hidden shadow-lg">
-      <img
-        src="/images/quienes-somos.jpg"
-        alt="Manos en corazón"
-        class="w-full h-72 md:h-80 object-cover"
-        onerror="this.setAttribute('src', 'https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80');"
-      />
-    </div>
-  </section>
-
-  <!-- Sé parte CTA -->
-  <section class="bg-white py-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="section-title">Sé parte</h2>
-      <span class="section-underline mx-auto"></span>
-    </div>
-
-    <!-- Sé Luz — dark overlay section -->
-    <div class="relative mt-6 overflow-hidden">
-      <div class="absolute inset-0">
-        <img
-          src="/images/cta-luz.jpg"
-          alt="Sé Luz"
-          class="w-full h-full object-cover"
-          onerror="this.setAttribute('src', 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80');"
-        />
-        <div class="absolute inset-0 bg-black/55"></div>
-      </div>
-      <div class="relative max-w-3xl mx-auto px-6 py-20 text-center text-white">
-        <h3 class="text-3xl md:text-4xl font-serif font-bold mb-4">Sé Luz en la Vida de Alguien</h3>
-        <p class="text-white/85 mb-8 text-lg">
-          Cada niño lleva un propósito. Tú puedes ser parte de que lo descubra.
-        </p>
-        <a href="/voluntariado" class="btn-primary shadow-lg">Únete como voluntario</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Campaña -->
-  <section class="bg-cream py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Campaña Activa</span>
-          <h2 class="text-3xl font-serif font-bold text-brand-red mt-2 mb-4">Every Child. Every Chance.</h2>
-          <p class="text-brand-text/80 leading-relaxed mb-6">
-            Ayúdanos a llegarle a cada niño con lo que necesita: kits escolares, alimentación diaria y
-            mentores que crean en su futuro.
-          </p>
-          <ul class="space-y-2 mb-6">
-            {[
-              '5,000 kits escolares',
-              '1,000 comidas diarias',
-              'Talleres de mentoría',
-            ].map(item => (
-              <li class="flex items-center gap-2 text-sm text-brand-text/80">
-                <svg class="w-4 h-4 text-brand-terracotta flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-          <a href="/donaciones" class="btn-primary inline-block">Donar ahora</a>
+    <div class="relative max-w-7xl mx-auto px-6 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 bg-brand-red/5 border border-brand-red/15 text-brand-red text-xs font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-6">
+          <span class="w-2 h-2 bg-brand-terracotta rounded-full animate-pulse-soft"></span>
+          {home.hero.badge}
         </div>
-        <div class="rounded-2xl overflow-hidden">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-brand-text leading-[1.1] mb-6">
+          <Fragment set:html={
+            home.hero.title_line1.replace(
+              home.hero.title_highlight,
+              `<span class="relative inline-block text-brand-terracotta">${home.hero.title_highlight}<span class="absolute -bottom-1 left-0 w-full h-2 bg-brand-gold/30 -z-10 rounded"></span></span>`
+            )
+          } />
+          <br/>{home.hero.title_line2}
+        </h1>
+        <p class="text-lg md:text-xl text-brand-text/75 leading-relaxed max-w-xl mb-10">
+          {home.hero.subtitle}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href={home.hero.cta_primary_url} class="group inline-flex items-center justify-center gap-2 bg-gradient-to-br from-brand-red to-brand-terracotta text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-brand-red/20 hover:shadow-xl hover:shadow-brand-red/30 hover:-translate-y-0.5 transition-all">
+            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-white" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/>
+            </svg>
+            {home.hero.cta_primary_label}
+          </a>
+          <a href={home.hero.cta_secondary_url} class="group inline-flex items-center justify-center gap-2 bg-white border-2 border-brand-terracotta text-brand-terracotta font-bold px-8 py-4 rounded-2xl hover:bg-brand-terracotta hover:text-white hover:-translate-y-0.5 transition-all">
+            {home.hero.cta_secondary_label}
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="relative reveal-scale" data-delay="200">
+        <div class="absolute -top-6 -right-6 w-full h-full bg-gradient-to-br from-brand-gold to-brand-terracotta rounded-[2.5rem] -z-10"></div>
+        <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-brand-red aspect-[4/5] max-w-md mx-auto lg:max-w-none">
+          {home.hero.slides.map(s => (
+            <img
+              src={s.src}
+              alt={s.alt}
+              class="hero-slide w-full h-full object-cover"
+              onerror="this.onerror=null;this.style.display='none';"
+              loading="eager"
+            />
+          ))}
+          <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur rounded-2xl p-4 shadow-xl">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-red to-brand-terracotta flex items-center justify-center text-white">❤️</div>
+              <div>
+                <p class="text-xs uppercase tracking-wider text-brand-text/50 font-bold">{home.hero.badge_number}</p>
+                <p class="text-sm font-bold text-brand-text">{home.hero.badge_label}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ STATS BAR ════════════ -->
+  <section class="bg-gradient-to-r from-brand-red via-brand-red to-brand-terracotta text-white py-12">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+      {home.stats.map((s, i) => (
+        <div class="reveal" data-delay={String((i+1)*100)}>
+          <p class="text-2xl mb-2">{s.icon}</p>
+          <p class="text-4xl md:text-5xl font-serif font-bold mb-1">{s.number}</p>
+          <p class="text-sm md:text-base text-white/85 uppercase tracking-wider">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ════════════ MISSION ════════════ -->
+  <section class="bg-white py-20 md:py-28" id="nosotros">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div class="relative reveal-scale order-last md:order-first">
+        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-gold/20 rounded-full blur-2xl"></div>
+        <div class="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] bg-gradient-to-br from-brand-terracotta to-brand-red">
           <img
-            src="/images/campaign.jpg"
-            alt="Every Child Every Chance"
-            class="w-full h-64 object-cover"
-            onerror="this.setAttribute('src', 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80');"
+            src={home.mission.image}
+            alt="Niños en actividad"
+            class="w-full h-full object-cover"
+            onerror="this.onerror=null;this.style.display='none';"
           />
         </div>
+        <div class="hidden md:block absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-xl p-5 max-w-[240px] border border-brand-border">
+          <p class="text-brand-gold text-2xl mb-1">❝</p>
+          <p class="text-sm text-brand-text/80 italic leading-snug">{home.mission.quote}</p>
+          <p class="text-xs text-brand-terracotta font-bold mt-2">— {home.mission.quote_source}</p>
+        </div>
+      </div>
+
+      <div class="reveal" data-delay="100">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-terracotta mb-3">{home.mission.kicker}</p>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-text leading-tight mb-6">
+          <Fragment set:html={
+            home.mission.title.replace(
+              home.mission.title_highlight,
+              `<span class="text-brand-terracotta">${home.mission.title_highlight}</span>`
+            )
+          } />
+        </h2>
+        <p class="text-brand-text/75 leading-relaxed mb-5 text-lg" set:html={home.mission.paragraph_1.replace(/\*\*(.+?)\*\*/g, '<strong class="text-brand-red">$1</strong>')}></p>
+        <p class="text-brand-text/75 leading-relaxed mb-8">{home.mission.paragraph_2}</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/nosotros" class="btn-outline">Conoce más →</a>
+          <a href="/voluntariado" class="text-brand-text/70 hover:text-brand-terracotta font-semibold px-2 py-3 inline-flex items-center gap-1 transition-colors">
+            Únete a nosotros
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Equipo -->
-  <section class="bg-white py-20">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="section-title">Conoce a Nuestro Equipo</h2>
-      <span class="section-underline mx-auto"></span>
-      <p class="text-brand-text/70 mb-10 max-w-lg mx-auto">
-        Personas comprometidas que dan lo mejor de sí por los niños y jóvenes de nuestra comunidad.
-      </p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {[
-          { name: 'Voluntario 1', role: 'Coordinador', photo: '/images/team-1.jpg' },
-          { name: 'Voluntario 2', role: 'Educación', photo: '/images/team-2.jpg' },
-          { name: 'Voluntario 3', role: 'Logística', photo: '/images/team-3.jpg' },
-          { name: 'Voluntario 4', role: 'Arte y Música', photo: '/images/team-4.jpg' },
-        ].map(member => (
-          <div class="text-center">
-            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-brand-border mx-auto mb-3 overflow-hidden">
-              <img
-                src={member.photo}
-                alt={member.name}
-                class="w-full h-full object-cover"
-                onerror="this.style.display='none';"
-              />
+  <!-- ════════════ WHAT WE DO ════════════ -->
+  <section class="bg-gradient-to-b from-cream to-white py-20 md:py-28" id="que-hacemos">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-terracotta mb-3">{home.services.kicker}</p>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-text mb-4">
+          <Fragment set:html={
+            home.services.title.replace(
+              home.services.title_highlight,
+              `<span class="text-brand-terracotta">${home.services.title_highlight}</span>`
+            )
+          } />
+        </h2>
+        <p class="text-brand-text/65 max-w-xl mx-auto text-lg">{home.services.subtitle}</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+        {home.services.cards.map((card, i) => {
+          const icons = [
+            `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+            `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>`,
+            `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>`,
+            `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>`,
+          ];
+          return (
+            <div
+              class="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden border-l-4 border-brand-terracotta reveal"
+              data-delay={String((i+1)*100)}
+            >
+              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-terracotta/10 to-transparent rounded-full -translate-y-1/3 translate-x-1/3 group-hover:scale-125 transition-transform duration-500"></div>
+              <div class="relative">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-terracotta to-brand-red flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform" set:html={icons[i] || icons[0]} />
+                <h3 class="text-xl font-serif font-bold text-brand-text mb-3">{card.title}</h3>
+                <p class="text-brand-text/70 leading-relaxed">{card.desc}</p>
+              </div>
             </div>
-            <p class="font-semibold text-sm text-brand-text">{member.name}</p>
-            <p class="text-xs text-brand-text/60">{member.role}</p>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   </section>
 
-  <!-- Testimonios -->
-  <section class="bg-cream py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="section-title">Historias que Inspiran</h2>
-        <span class="section-underline mx-auto"></span>
+  <!-- ════════════ GALLERY ════════════ -->
+  <section class="bg-white py-20 md:py-28" id="galeria">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-terracotta mb-3">{home.gallery.kicker}</p>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-text mb-4">
+          <Fragment set:html={
+            home.gallery.title.replace(
+              home.gallery.title_highlight,
+              `<span class="text-brand-terracotta">${home.gallery.title_highlight}</span>`
+            )
+          } />
+        </h2>
+        <p class="text-brand-text/65 max-w-xl mx-auto text-lg">{home.gallery.subtitle}</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {[
-          {
-            quote: 'Ser voluntario en Corazón Late cambió mi vida tanto como espero haber cambiado la de los niños.',
-            name: 'María G.',
-            role: 'Voluntaria',
-          },
-          {
-            quote: 'Ver a cada niño descubrir su potencial es la mayor recompensa que existe.',
-            name: 'Carlos R.',
-            role: 'Voluntario',
-          },
-          {
-            quote: 'Esta fundación me enseñó que el amor en acción es lo más poderoso del mundo.',
-            name: 'Laura M.',
-            role: 'Voluntaria',
-          },
-        ].map(t => (
-          <div class="bg-white rounded-2xl p-6 shadow-sm">
-            <p class="text-brand-text/70 text-sm leading-relaxed italic mb-4">"{t.quote}"</p>
-            <p class="font-semibold text-sm text-brand-text">{t.name}</p>
-            <p class="text-xs text-brand-text/50">{t.role}</p>
+
+      <div class="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
+        {home.gallery.items.map((img, i) => (
+          <div
+            class="group relative flex-shrink-0 w-[78%] sm:w-[60%] md:w-auto snap-start aspect-square rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all reveal-scale bg-gradient-to-br from-brand-terracotta to-brand-red"
+            data-delay={String((i % 3 + 1) * 100)}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              onerror="this.onerror=null;this.style.display='none';"
+            />
+            <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-5">
+              <p class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-1">Actividad</p>
+              <p class="text-white font-serif font-bold text-lg leading-tight">{img.title}</p>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-red/80 to-brand-terracotta/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <div class="text-center text-white px-4">
+                <p class="text-3xl mb-2">❤️</p>
+                <p class="font-serif font-bold text-xl">{img.title}</p>
+              </div>
+            </div>
           </div>
         ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="https://www.instagram.com/fundacioncorazonlate/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-brand-terracotta hover:text-brand-red font-semibold transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          Ver más en @fundacioncorazonlate
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="bg-brand-red text-white py-20 text-center">
-    <div class="max-w-2xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
-        No Servimos Solos. Tú Lo Haces Posible.
-      </h2>
-      <p class="text-white/80 mb-8">
-        Únete como voluntario o apoya con una donación. Cada corazón cuenta.
+  <!-- ════════════ COLLAB / IMPACT BANNER ════════════ -->
+  <section class="relative overflow-hidden bg-brand-red">
+    <div class="absolute inset-0">
+      {home.banner.slides.map(src => (
+        <img
+          src={src}
+          alt=""
+          class="banner-slide w-full h-full object-cover"
+          onerror="this.onerror=null;this.style.display='none';"
+          loading="lazy"
+        />
+      ))}
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-red/95 via-brand-red/85 to-brand-terracotta/80"></div>
+    </div>
+    <div class="relative max-w-5xl mx-auto px-6 py-24 md:py-32 text-center text-white">
+      <p class="text-brand-gold text-4xl mb-6 reveal">❝</p>
+      <p class="text-2xl md:text-4xl font-serif font-bold leading-snug mb-8 reveal" data-delay="100">
+        {home.banner.quote}
       </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/voluntariado" class="bg-white text-brand-red font-bold px-8 py-3 rounded-full hover:bg-cream transition-colors">Ser Voluntario</a>
-        <a href="/donaciones" class="border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors">Donar</a>
+      <p class="text-white/80 tracking-[0.25em] uppercase text-xs mb-10 reveal" data-delay="200">{home.banner.signature}</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" data-delay="300">
+        <a href={home.banner.cta_primary_url} class="bg-white text-brand-red font-bold px-8 py-4 rounded-2xl hover:bg-cream hover:-translate-y-0.5 transition-all shadow-xl">
+          {home.banner.cta_primary_label}
+        </a>
+        <a href={home.banner.cta_secondary_url} class="bg-white/10 backdrop-blur border-2 border-white text-white font-bold px-8 py-4 rounded-2xl hover:bg-white/20 hover:-translate-y-0.5 transition-all">
+          {home.banner.cta_secondary_label}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ TESTIMONIALS ════════════ -->
+  <section class="bg-gradient-to-b from-cream to-white py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-terracotta mb-3">{home.testimonials.kicker}</p>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-text mb-4">
+          <Fragment set:html={
+            home.testimonials.title.replace(
+              home.testimonials.title_highlight,
+              `<span class="text-brand-terracotta">${home.testimonials.title_highlight}</span>`
+            )
+          } />
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {home.testimonials.items.map((t, i) => (
+          <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all border-t-4 border-brand-terracotta flex flex-col reveal" data-delay={String((i+1)*100)}>
+            <p class="text-brand-gold text-3xl mb-3">❝</p>
+            <p class="text-brand-text/80 leading-relaxed flex-1 mb-6 italic">{t.quote}</p>
+            <div class="border-t border-brand-border pt-4">
+              <p class="font-serif font-bold text-brand-terracotta">{t.author}</p>
+              <p class="text-xs text-brand-text/60 uppercase tracking-wider mt-1">{t.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ FINAL CTA ════════════ -->
+  <section class="relative bg-gradient-to-br from-brand-red via-brand-red to-brand-terracotta text-white py-24 md:py-32 text-center overflow-hidden">
+    <div class="absolute top-10 left-10 w-32 h-32 rounded-full bg-white/5 blur-2xl animate-float"></div>
+    <div class="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-brand-gold/10 blur-3xl animate-float-slow"></div>
+
+    <div class="relative max-w-3xl mx-auto px-6">
+      <p class="text-5xl mb-6 reveal">❤️</p>
+      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight reveal" data-delay="100">
+        {home.final_cta.title_line1}<br/>{home.final_cta.title_line2}
+      </h2>
+      <p class="text-white/85 text-lg leading-relaxed mb-10 max-w-xl mx-auto reveal" data-delay="200">
+        {home.final_cta.subtitle}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" data-delay="300">
+        <a href={home.final_cta.cta_primary_url} class="bg-white text-brand-red font-bold px-10 py-4 rounded-2xl hover:bg-cream hover:-translate-y-0.5 transition-all shadow-xl">
+          {home.final_cta.cta_primary_label}
+        </a>
+        <a href={home.final_cta.cta_secondary_url} class="border-2 border-white text-white font-bold px-10 py-4 rounded-2xl hover:bg-white/15 hover:-translate-y-0.5 transition-all">
+          {home.final_cta.cta_secondary_label}
+        </a>
       </div>
     </div>
   </section>
 
 </Layout>
+
+<!-- ============== Scroll-reveal observer ============== -->
+<script is:inline>
+  (function () {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal, .reveal-scale').forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.observe(el));
+  })();
+</script>
