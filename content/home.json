@@ -12,16 +12,40 @@
     "badge_number": "+500",
     "badge_label": "Niños alcanzados",
     "slides": [
-      { "src": "/images/nina-sol.jpg",                 "alt": "Niña con sol pintado en la mejilla" },
-      { "src": "/images/gallery/taller-banner.jpg",    "alt": "Voluntaria frente al banner Corazón Late" },
-      { "src": "/images/gallery/mentoria.jpg",         "alt": "Mentoría con jóvenes" },
-      { "src": "/images/gallery/sonrisa-timida.jpg",   "alt": "Niña sonriendo tímidamente" }
+      {
+        "src": "/images/nina-sol.jpg",
+        "alt": "Niña con sol pintado en la mejilla"
+      },
+      {
+        "src": "/images/gallery/taller-banner.jpg",
+        "alt": "Voluntaria frente al banner Corazón Late"
+      },
+      {
+        "src": "/images/gallery/mentoria.jpg",
+        "alt": "Mentoría con jóvenes"
+      },
+      {
+        "src": "/images/gallery/sonrisa-timida.jpg",
+        "alt": "Niña sonriendo tímidamente"
+      }
     ]
   },
   "stats": [
-    { "number": "500+",  "label": "Niños Alcanzados",    "icon": "❤️" },
-    { "number": "50+",   "label": "Voluntarios Activos", "icon": "🤝" },
-    { "number": "100%",  "label": "Amor en Acción",      "icon": "✨" }
+    {
+      "number": "500+",
+      "label": "Niños Alcanzados",
+      "icon": "❤️"
+    },
+    {
+      "number": "50+",
+      "label": "Voluntarios Activos",
+      "icon": "🤝"
+    },
+    {
+      "number": "100%",
+      "label": "Amor en Acción",
+      "icon": "✨"
+    }
   ],
   "mission": {
     "kicker": "Nuestra misión",
@@ -61,14 +85,38 @@
     "kicker": "Galería",
     "title": "Nuestras Actividades",
     "title_highlight": "Actividades",
-    "subtitle": "Mira cómo tocamos vidas cada día. Cada foto es un latido.",
+    "subtitle": "Mira cómo tocamos vidas cada día. Cada foto cuenta una historia.",
     "items": [
-      { "src": "/images/gallery/jornada-calle.jpg",  "alt": "Voluntarios y comunidad en jornada de alcance", "title": "Jornadas de Alcance" },
-      { "src": "/images/gallery/taller-banner.jpg",  "alt": "Voluntaria dando charla a jóvenes",             "title": "Talleres y Formación" },
-      { "src": "/images/gallery/fe.jpg",             "alt": "Voluntaria con niños y figuras de Jesús",       "title": "Fe y Valores" },
-      { "src": "/images/gallery/navidad.jpg",        "alt": "Niños con regalos en evento navideño",          "title": "Eventos Especiales" },
-      { "src": "/images/gallery/mentoria.jpg",       "alt": "Mentoría con niñas",                            "title": "Mentoría" },
-      { "src": "/images/gallery/sonrisa-timida.jpg", "alt": "Niña sonriendo tímidamente",                    "title": "Cada Sonrisa Cuenta" }
+      {
+        "src": "/images/gallery/jornada-calle.jpg",
+        "alt": "Voluntarios y comunidad en jornada de alcance",
+        "title": "Jornadas de Alcance"
+      },
+      {
+        "src": "/images/gallery/taller-banner.jpg",
+        "alt": "Voluntaria dando charla a jóvenes",
+        "title": "Talleres y Formación"
+      },
+      {
+        "src": "/images/gallery/fe.jpg",
+        "alt": "Voluntaria con niños y figuras de Jesús",
+        "title": "Fe y Valores"
+      },
+      {
+        "src": "/images/gallery/navidad.jpg",
+        "alt": "Niños con regalos en evento navideño",
+        "title": "Eventos Especiales"
+      },
+      {
+        "src": "/images/gallery/mentoria.jpg",
+        "alt": "Mentoría con niñas",
+        "title": "Mentoría"
+      },
+      {
+        "src": "/images/gallery/sonrisa-timida.jpg",
+        "alt": "Niña sonriendo tímidamente",
+        "title": "Cada Sonrisa Cuenta"
+      }
     ]
   },
   "banner": {
@@ -89,9 +137,21 @@
     "title": "Historias que Inspiran",
     "title_highlight": "Inspiran",
     "items": [
-      { "quote": "Ser voluntario en Corazón Late cambió mi vida tanto como espero haber cambiado la de los niños.", "author": "María G.", "role": "Voluntaria" },
-      { "quote": "Ver a cada niño descubrir su potencial es la mayor recompensa que existe.",                       "author": "Carlos R.", "role": "Voluntario" },
-      { "quote": "Esta fundación me enseñó que el amor en acción es lo más poderoso del mundo.",                     "author": "Laura M.", "role": "Voluntaria" }
+      {
+        "quote": "Ser voluntario en Corazón Late cambió mi vida tanto como espero haber cambiado la de los niños.",
+        "author": "María G.",
+        "role": "Voluntaria"
+      },
+      {
+        "quote": "Ver a cada niño descubrir su potencial es la mayor recompensa que existe.",
+        "author": "Carlos R.",
+        "role": "Voluntario"
+      },
+      {
+        "quote": "Esta fundación me enseñó que el amor en acción es lo más poderoso del mundo.",
+        "author": "Laura M.",
+        "role": "Voluntaria"
+      }
     ]
   },
   "final_cta": {
